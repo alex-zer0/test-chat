@@ -1,0 +1,17 @@
+<main class="home-page">
+  <ul>
+    <li ng-repeat="msg in $ctrl.messages" ng-class="{new: msg.isNew}">
+      <div class="info">
+        <img ng-attr-src="{{msg.avatarUrl}}" alt="" height="30" width="30">
+        <i class="fa fa-spinner fa-spin"></i>
+        <p>{{::msg.body}}</p>
+      </div>
+    </li>
+  </ul>
+  <footer>
+    <textarea class="md-textarea" ng-model="$ctrl.newMsg"></textarea>
+    <button class="md-fab md-button md-mini md-ink-ripple" ng-click="$ctrl.addMessage()">
+      <i class="fa fa-paper-plane-o"></i>
+    </button>
+  </footer>
+</main>

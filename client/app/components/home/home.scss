@@ -1,0 +1,85 @@
+@import "../../common/common";
+
+.home-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & > ul {
+    height: calc(100% - 60px);
+    flex: 0 1 calc(100% - 60px);
+    overflow: auto;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+
+    & > li {
+      &.new {
+        & > .info {
+          opacity: .5;
+
+          & > img {
+            display: none;
+          }
+          & > .fa {
+            display: inline-block;
+          }
+        }
+      }
+
+      & > .info {
+        display: flex;
+        align-items: flex-start;
+
+        & > .fa {
+          display: none;
+          font-size: 28px;
+          margin-right: 10px;
+        }
+
+        & > img {
+          border-radius: 6px;
+          margin-right: 10px;
+        }
+        & > p {
+          border-radius: 4px;
+          padding: .5rem;
+          background: $bgColor;
+          border: 1px solid $darkBgColor;
+        }
+      }
+
+      & + li {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  & > footer {
+    height: 60px;
+    flex: 0 1 60px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $bgColor;
+    position: relative;
+
+    & > textarea {
+      border: none;
+      flex: 0 1 100%;
+      height: 100%;
+      resize: none;
+      padding: .5rem 3.5rem .5rem 2rem;
+
+      &:focus {
+        outline: none;
+        box-shadow: inset 0 1px 2px $bgColor;
+      }
+    }
+
+    & > .md-button {
+      position: absolute;
+      right: 10px;
+      margin: 0;
+    }
+  }
+}
